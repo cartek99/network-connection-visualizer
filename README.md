@@ -1,12 +1,13 @@
 # Network Connection Visualizer
 
-Visualize your computer’s active public network connections on a world map.
+Visualize your computer’s active public network connections on a modern world map.
 
 ## Features
 
-- Detects all active public (non-local) network connections.
-- Uses geolocation to plot remote hosts on a world map.
-- Generates a high-quality image showing your global network footprint.
+- Lists all external network connections by process, PID, remote IP, organization, and location.
+- Plots connections on a world map using the latest Stadia Maps basemap.
+- Logs all results to a file with timestamps.
+- Table view in the console for quick inspection.
 
 ## Requirements
 
@@ -15,35 +16,40 @@ Visualize your computer’s active public network connections on a world map.
 
 ## Installation
 
-1. Clone this repo:
+1. **Clone this repo:**
 
     ```
-    git clone https://github.com/YOUR_GITHUB_USERNAME/network-connection-visualizer.git
+    git clone https://github.com/cartek99/network-connection-visualizer.git
     cd network-connection-visualizer
     ```
 
-2. Install dependencies:
+2. **Install dependencies:**
 
-    ```
-    pip install -r requirements.txt
-    ```
+    - **macOS:**
+        ```
+        brew install geos proj
+        pip install --upgrade pip setuptools wheel
+        pip install -r requirements.txt
+        ```
+    - **Linux (Debian/Ubuntu):**
+        ```
+        sudo apt-get install libgeos-dev libproj-dev
+        pip install --upgrade pip setuptools wheel
+        pip install -r requirements.txt
+        ```
+    - **Windows:**
+        ```
+        pip install --upgrade pip setuptools wheel
+        pip install -r requirements.txt
+        ```
+
+    - **Or use Conda (recommended for all platforms):**
+        ```
+        conda env create -f environment.yml
+        conda activate netviz
+        ```
 
 ## Usage
 
-1. Edit `main.py` if you want to change your source location (default is Singapore).
-2. Run:
-
-    ```
-    python main.py
-    ```
-
-3. A PNG map of your current network connections will be created and displayed.
-
-## Notes
-
-- By default, private/local network connections are filtered out.
-- For Windows, if you see warnings about scripts not on PATH, see the [Python documentation](https://docs.python.org/3/using/windows.html#excursus-setting-environment-variables).
-
-## License
-
-MIT License
+```bash
+python main.py
