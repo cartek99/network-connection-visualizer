@@ -14,6 +14,9 @@ Visualize your computer’s active public network connections on a modern world 
 - Python 3.8+
 - pip
 
+- **macOS:**
+Need to run as "sudo ."
+
 ## Installation
 
 1. **Clone this repo:**
@@ -53,3 +56,7 @@ Visualize your computer’s active public network connections on a modern world 
 
 ```bash
 python main.py
+
+**macOS:**
+sudo python main.py
+ 
